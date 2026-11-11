@@ -72,6 +72,6 @@ The code is strictly guarded against invalid data mutations:
 - Assigning a string to an ID (`id: "3"`) throws: `Type 'string' is not assignable to type 'number'`
 - Passing invalid filters (`filterByStatus(tasks, "finished")`) throws: `Argument of type '"finished"' is not assignable to parameter of type 'TaskStatus'`
 
-```
+## ✅ Compilation Check
 
-```
+`npx tsc --noEmit` completes with exit code 0 and no errors under `strict` mode.
