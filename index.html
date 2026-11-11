@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypeTasks — A Type-Safe Task Tracker</title>
+    <meta name="description" content="A small, type-safe task tracker built with HTML, CSS, and TypeScript." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <h1 class="brand-name">TypeTasks</h1>
+      </div>
+      <p class="tagline">A type-safe task tracker — built on a TypeScript data model.</p>
+      <p id="summary" class="summary"></p>
+    </header>
+
+    <main class="container">
+      <div class="add-row">
+        <input id="title" type="text" class="add-input" placeholder="Add a task… (e.g. Write the Task interface)" autocomplete="off" />
+        <select id="status" class="add-status" aria-label="Initial status">
+          <option value="todo">todo</option>
+          <option value="in-progress">in-progress</option>
+          <option value="done">done</option>
+        </select>
+        <button id="add" type="button" class="add-btn">Add task</button>
+      </div>
+
+      <div id="chips" class="chips" role="group" aria-label="Filter by status"></div>
+
+      <ul id="list" class="list" aria-label="Tasks"></ul>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with plain HTML, CSS &amp; TypeScript. Every task obeys the <code>Task</code> type.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

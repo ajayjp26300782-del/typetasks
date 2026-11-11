@@ -38,3 +38,18 @@ const nextStatus: Record<TaskStatus, TaskStatus> = {
 export function advanceTask(tasks: Task[], id: number): Task[] {
   return tasks.map((t) => (t.id === id ? { ...t, status: nextStatus[t.status] } : t));
 }
+
+// Remove a task by id.
+export function deleteTask(tasks: Task[], id: number): Task[] {
+  return tasks.filter((t) => t.id !== id);
+}
+
+// Count how many tasks have a given status.
+export function countByStatus(tasks: Task[], status: TaskStatus): number {
+  return filterByStatus(tasks, status).length;
+}
+
+// Make sure new ids never collide with tasks loaded from storage.
+export function seedNextId(tasks: Task[]): void {
+  nextId = tasks.reduce((max, t) => Math.max(max, t.id), 0) + 1;
+}
